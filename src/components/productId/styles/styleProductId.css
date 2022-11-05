@@ -1,0 +1,30 @@
+.product {
+    padding: var(--padding-mobile);
+    padding-bottom: 60px;
+  }
+
+.navigate-container{
+  padding-top: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.navigate-container p:nth-child(1){
+  color: var(--color-title-text);
+}
+
+.navigate-container span {
+  width: 10px;
+  height: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(  --secondary-color-red);
+}
+  
+.product-slider-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
