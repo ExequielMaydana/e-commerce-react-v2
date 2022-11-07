@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import CartScreen from "./components/Cart/CartScreen";
 import HomeScreen from "./components/Home/HomeScreen";
@@ -9,8 +10,15 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import PurchasesScreen from "./components/Purchases/PurchasesScreen";
 import FooterScreen from "./components/Shared/FooterScreen";
 import HeaderScreen from "./components/Shared/HeaderScreen";
+import { getAllProducts } from "./store/slices/products.slice";
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, []);
 
   return (
     <div className="App">

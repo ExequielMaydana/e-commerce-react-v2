@@ -12,20 +12,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5em;
+    gap: 0.3em;
 }
 
 .formNameProduct__item {
-    width: 80%;
+    width: 70%;
 }
 
 .formNameProduct__input {
     width: 100%;
     border: none;
     outline: none;
-    padding: 0.5em 0.3em;
+    height: 30px;
     box-shadow: 0 1px 3px #17181ccc;
     border-radius: 0.5em;
+    padding-left: 1em;
 }
 
 .formNameProduct__input::placeholder {
@@ -33,11 +34,11 @@
 }
 
 .formNameProduct__btn {
-    padding: 0.5em 0.9em;
+    width: 40px;
+    height: 30px;
     border: none;
-    background-color: #3264fb;
+    background-color: #2A3240;
     color: #EAEBED;
-    box-shadow: 0 1px 3px #17181ccc;
     border-radius: 0.5em;
     cursor: pointer;
     transition: 300ms all;
@@ -52,33 +53,63 @@
     .container__filterName {
         position: relative;
         padding: 2em 0;
-        width: 100%;
     }
 
     .formNameProduct {
         position: absolute;
-        top: 0.9em;
-        right: 4em;
-        width: 60%;
-        justify-content: end;
+        top: 1em;
+        right: 0px;
     }
 
     .formNameProduct__input {
-        width: 95%;
         border: none;
         outline: none;
-        padding: 1em 1em;
+        height: 40px;
+    }
+
+    .formNameProduct__input::placeholder{
+        font-size: 1.2em;
     }
 
     .formNameProduct__btn {
-        padding: 0.9em 2em;
+        width: 60px;
+        height: 40px;
         border: none;
-        background-color: #3264fb;
-        color: #EAEBED;
     }
 
     .formNameProduct__btn i {
+        font-size: 1.5em;
+    }
+
+}
+
+@media screen and (min-width: 992px){
+    .formNameProduct {
+        width: 70%;
+    }
+    
+    .formNameProduct__item {
+        width: 70%;
+    }
+    
+
+    .formNameProduct__input {
+        height: 45px;
+    }
+
+    .formNameProduct__input::placeholder{
         font-size: 1.3em;
     }
+
+    .formNameProduct__btn {
+        width: 65px;
+        height: 45px;
+        border: none;
+    }
+
+    .formNameProduct__btn i {
+        font-size: 1.5em;
+    }
+
 
 }

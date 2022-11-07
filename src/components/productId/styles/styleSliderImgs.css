@@ -73,13 +73,15 @@
     width: 20px;
     aspect-ratio: 1;
     border-radius: 50%;
-    background-color: #2A3240;
+    background-color: #82EF;
     cursor: pointer;
   }
   .puntitos__active {
-    background-color: #45E3FF;
+    background-color: #2A3240;
   }
 
   .puntitos__active:active{
     transform: scale(0.90);
   }
+
+ 

@@ -20,7 +20,10 @@ const HomeScreen = () => {
   return (
     <section className='home'>
 
+      <div className='home-filter-byname'>
         <FilterProducstOrName/>
+        </div>
+        
         <div className='home_filterMobile'>
         <FilterMobile/>
         </div>

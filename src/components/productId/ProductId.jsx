@@ -10,7 +10,7 @@ import SimilarProduct from './SimilarProduct'
 const ProductId = () => {
 
     const [product, setProduct] = useState()
-  console.log(product);
+    
     const navigate = useNavigate()
 
     const {id} = useParams()
@@ -22,14 +22,19 @@ const ProductId = () => {
       .catch(err => console.log(err))
     }, [id])
 
+    const handleVolver = () => {
+      navigate('/')
+    }
+
 
   return (
     <section className='product'>
       <div className='navigate-container'>
-        <p>Home</p>
+        <p onClick={handleVolver}>Home</p>
         <span></span>
         <p>{product?.title}</p>
       </div>
+      
       <div className='product-slider-info'>
         <SliderImgs product={product}/>
         <ProductInfoId product={product}/>

@@ -4,7 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 2;
 }
 
@@ -12,7 +13,7 @@
 
 .header__title{
     position: relative;
-    color: #79fff1;
+    color: #82EF;
     font-size: 1.7em;
     font-weight: 700;
     cursor: pointer;
@@ -27,7 +28,7 @@
 .header__title::before{
     position: absolute;
     content: attr(data-text);
-    text-shadow: 0px 0px 20px #45E3FF;
+    text-shadow: 0px 0px 20px #82EF;
     filter: blur(10px) brightness(0);
     animation: flicker 2s linear forwards;
     animation-delay: 1s;
@@ -149,8 +150,8 @@
 }
 
 .navbar__links-active{
-    color: #45E3FF;
-    text-shadow: 0px 0px 20px #45E3FF
+    color: #82EF;
+    text-shadow: 0px 0px 20px #82EF
 }
 
 .items__logOut{
@@ -164,7 +165,6 @@
 @media screen and (min-width: 720px) {
     .header {
       padding: 0 0 0 var(--padding-tablet);
-      box-shadow: 0 1px 20px #45E3FF;
       justify-content: space-around;
     }
 

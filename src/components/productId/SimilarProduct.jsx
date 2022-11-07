@@ -26,6 +26,7 @@ const SimilarProduct = ({product}) => {
             if(e.title !== product.title){
               return (
               <ProductCard 
+              className="card-info-similar"
                 key={e.id}
                 product={e}
               />)
