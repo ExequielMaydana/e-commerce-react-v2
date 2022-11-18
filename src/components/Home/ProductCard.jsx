@@ -14,12 +14,17 @@ const ProductCard = ({ product }) => {
 
   const dispatch = useDispatch();
 
+    /*
+    en esta funcion hago el post del producto al carrito, 
+    luego dentro del then() ejecuto a la funcion donde hago el get de los productos del carrito
+    para que ya este actualizada cuando entre al carrito.
+    */
   const addCartProduct = () => {
     const URL = "https://e-commerce-api.academlo.tech/api/v1/cart";
 
     const objProduct = {
-      id: product.id,
-      quantity: 1,
+      "id": product.id,
+      "quantity": 1,
     };
 
     axios
