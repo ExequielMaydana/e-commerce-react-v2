@@ -4,13 +4,13 @@ import './style/styleSearchName.css'
 
 
 
-const FilterProducstOrName = () => {
+const FilterProducstOrName = ({setSearchProductName}) => {
 
 
 const {handleSubmit, register, reset} = useForm()
 
 const submit = data => {
-    console.log(data);
+  setSearchProductName(data.name)
 }
 
 

@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import "./style/styleFilterMobile.css";
 
-const FilterMobile = () => {
+const categories = ['Smartphones', 'Smart TV', 'Computers']
+
+const FilterMobile = ({products, setFilteredProduct}) => {
   const openFilterMobile = useRef();
 
   const containerFilterPrice = useRef();
@@ -26,6 +28,10 @@ const FilterMobile = () => {
   const mostrarFilterCategory = () => {
     rotateRow.current?.classList.toggle('rotate-row-open')
     containerFilterCategory.current?.classList.toggle('open-filter-category')
+  }
+
+  const categoryFilter = categoryFilter => {
+    setFilteredProduct(products.filter(e => e.category?.name.toLowerCase().includes(categoryFilter.toLowerCase()) === true))
   }
 
   return (
@@ -90,20 +96,15 @@ const FilterMobile = () => {
                 className="bx bx-chevron-up"
               ></i>
             </div>
-
             <ul
               ref={containerFilterCategory}
               className="container-list-category"
             >
-              <li className="category-item-mobile">
-                <p>Smart TV</p>
-              </li>
-              <li className="category-item-mobile">
-                <p>Smartphones</p>
-              </li>
-              <li className="category-item-mobile">
-                <p>Computers</p>
-              </li>
+                         {
+                categories.map(category => (
+                    <li className='category-item-mobile' onClick={() => categoryFilter(category)} key={category}>{category}</li>
+                ))
+            }
             </ul>
           </article>
         </div>

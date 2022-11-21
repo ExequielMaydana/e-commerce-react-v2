@@ -1,19 +1,25 @@
 import React, {useRef} from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import './styles/styleHeader.css'
 
 const HeaderScreen = () => {
 
     const navbarOpen = useRef()
 
+
     const lineOneActive = useRef()
     const lineTwoActive = useRef()
     const lineThreeActive = useRef()
 
     const navigate = useNavigate()
+    const location = useLocation()
 
     const navigateHome = () => {
-      navigate('/')
+      if(location.pathname === '/'){
+        window.location.reload()
+      }else{
+        navigate('/')
+      }
     }
 
 
