@@ -1,15 +1,19 @@
 import React from "react";
 import { useRef } from "react";
+import { useForm } from "react-hook-form";
 import "./style/styleFilterDesktop.css";
 
 const categories = ["Smartphones", "Smart TV", "Computers"];
 
-const FilterProductsOrCatPrice = ({ products, setFilteredProduct }) => {
+const FilterProductsOrCatPrice = ({ products, setFilteredProduct, setProductPriceOne, setProductPriceTwo}) => {
+
   const containerFilterPrice = useRef();
   const containerFilterCategory = useRef();
 
   const rotateRow = useRef();
   const rotateRow1 = useRef();
+
+  const {handleSubmit, register, reset} = useForm()
 
   const mostrarFilterPrice = () => {
     rotateRow1.current?.classList.toggle("rotate-row-open1");
@@ -32,6 +36,13 @@ const FilterProductsOrCatPrice = ({ products, setFilteredProduct }) => {
     );
   };
 
+  const defaultValue = {numOne: '', numTwo: ''}
+
+  const filterByPrice = data => {
+    setProductPriceOne(data.numOne)
+    setProductPriceTwo(data.numTwo)
+  }
+
   return (
     <aside className="container-filters">
       <article className="container-filter-price">
@@ -43,18 +54,19 @@ const FilterProductsOrCatPrice = ({ products, setFilteredProduct }) => {
             className="bx bx-chevron-up"
           ></i>
         </div>
-
+      <form onSubmit={handleSubmit(filterByPrice)}>
         <ul ref={containerFilterPrice} className="filter-price-inputs">
           <li className="container-inputs-price">
             <p>Desde</p>
-            <input type="number" min="1" />
+            <input type="number" min="1"  {...register('numOne')}/>
           </li>
           <li className="container-inputs-price-hasta">
             <p className="p-hasta">Hasta</p>
-            <input className="input-hasta" type="number" min="1" />
+            <input className="input-hasta" type="number" min="1" {...register('numTwo')}/>
           </li>
           <button className="filter-price-btn">Filtrar por precio</button>
         </ul>
+      </form>
       </article>
 
       <article className="container-filter-price">

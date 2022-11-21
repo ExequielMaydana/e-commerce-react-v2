@@ -1,7 +1,6 @@
 .login {
-    padding: 1em 0;
     width: 100%;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,7 +8,7 @@
 }
 
 .form {
-    width: min(90%, 600px);
+    width: min(90%, 500px);
     padding: 20px;
 
     display: flex;
@@ -24,7 +23,7 @@
     text-align: center;
     padding-bottom: 0.7em;
     margin-bottom: 1em;
-    border-bottom: 1px solid #3264fb;
+    border-bottom: 1px solid #82EF;
     color: var(--primary-color-white);
 }
 
@@ -35,7 +34,7 @@
 .form__welcome-data{
     width: 90%;
     color: #EAEBED;
-    border-bottom: 1px solid #3264fb;
+    border-bottom: 1px solid #82EF;
     padding-bottom: 0.7em;
     font-size: 0.8em;
     text-align: center;
@@ -88,16 +87,16 @@
     margin-top: 10px;
     border: none;
     border-radius: 0.5em;
-    background-color: #3264fb;
-    color: var(--primary-color-white);
+    background-color: #EAEBED;
+    color: #17181c;
     font-size: 0.8em;
     cursor: pointer;
-    transition: 300ms ease-in;
+    transition: 200ms ease-in;
+    font-weight: bold;
 }
 
 .form__btn:hover {
-    transform: scale(1.1);
-    transition: 300ms ease-in;
+    transition: 200ms ease-in;
     box-shadow: 1px 1px 8px #EAEBED;
 }
 
@@ -110,15 +109,19 @@
 }
 
 .form__register:hover {
-    color: #3264fb;
+    color: #82EF;
     transition: 200ms ease-in;
 }
 
 @media screen and (min-width: 720px) {
 
     .login {
-        padding-top: 1em;
-        padding-bottom: 2em;
+        padding-top: 8em;
+        padding-bottom: 3em;
+    }
+
+    .form{
+        width: 600px;
     }
 
     .form__welcome {
@@ -126,11 +129,11 @@
     }
 
     .form__welcome h2 {
-        font-size: 1.5em;
+        font-size: 1.1em;
     }
 
     .form__welcome-data{
-        font-size: 1.3em;
+        font-size: 1em;
     }
 
     .Login-email{
@@ -138,11 +141,11 @@
     }
 
     .form__item {
-        width: 60%;
+        width: 70%;
     }
 
     .form__item label {
-        font-size: 1.3em;
+        font-size: 1em;
     }
 
     .form__item input {
@@ -151,8 +154,8 @@
 
     .form__btn {
         width: 40%;
-        padding: 10px 0;
-        font-size: 1.3em;
+        padding: 8px 0;
+        font-size: 1.2em;
     }
 
     .form__register {

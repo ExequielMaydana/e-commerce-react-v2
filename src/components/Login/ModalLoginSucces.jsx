@@ -35,8 +35,8 @@ const Overlay = styled.div`
 
 const ContainerModal = styled.article`
   width: min(90%, 400px);
-  padding: 3em;
-  margin-bottom: 5em;
+  padding: 2em;
+  margin-bottom: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +54,7 @@ const ContainerIcon = styled.div`
 
     i{
         font-size: 5em;
-        color: #3264fb;
+        color: #82EF;
     }
 `;
 

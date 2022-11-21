@@ -5,14 +5,16 @@ import { useNavigate } from "react-router-dom";
 import { setCartGlobal } from "../../store/slices/cart.slice";
 import getConfig from "../../utils/getConfig";
 import CartInfo from "./CartInfo";
+import Loading from "../loading/Loading";
 import "./styles/styleCartScreen.css";
 
 const CartScreen = () => {
   const dispatch = useDispatch();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const cart = useSelector((state) => state.cart);
+  const loading = useSelector((state) => state.isLoading);
 
   console.log(cart);
 
@@ -47,43 +49,44 @@ const CartScreen = () => {
   }
 
   const goBack = () => {
-    navigate('/')
-  }
+    navigate("/");
+  };
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <section className="cart">
       <div>
+        <div className="cart-title-container">
+          <p className="cart-title-goback" onClick={goBack}>
+            Home
+          </p>
+          <span></span>
+          <p className="cart-title">My Cart</p>
+        </div>
 
-      <div className="cart-title-container">
-        <p className="cart-title-goback" onClick={goBack}>Home</p>
-        <span></span>
-        <p className="cart-title">My Cart</p>
-      </div>
-
-      <div className="cart__container">
-        {cart?.map((productCart) => (
-          <CartInfo key={productCart.id} productCart={productCart} />
-        ))}
-      </div>
-
+        <div className="cart__container">
+          {cart?.map((productCart) => (
+            <CartInfo key={productCart.id} productCart={productCart} />
+          ))}
+        </div>
       </div>
 
       <div className="total-btnConfirm">
-      {cart ? (
-        <h2 className="cart__total">
-          <span className="cart__total-label">Total: $</span>
-          <span className="cart__total-number">{totalPriceCart}</span>
-        </h2>
-      ) : (
-        <h2 className="text-cart-null">No has agregado nada al carrito!</h2>
-      )}
-      {cart ? (
-        <button className="cart__btn" onClick={postPurchase}>
-          Confirm Purchase
-        </button>
-      ) : null}
+        {cart ? (
+          <h2 className="cart__total">
+            <span className="cart__total-label">Total: $</span>
+            <span className="cart__total-number">{totalPriceCart}</span>
+          </h2>
+        ) : (
+          <h2 className="text-cart-null">No has agregado nada al carrito!</h2>
+        )}
+        {cart ? (
+          <button className="cart__btn" onClick={postPurchase}>
+            Confirm Purchase
+          </button>
+        ) : null}
       </div>
-
     </section>
   );
 };

@@ -54,7 +54,7 @@ const ContainerIcon = styled.div`
 
     i{
         font-size: 4em;
-        color: #3264fb;
+        color:#82EF;
     }
 `;
 
