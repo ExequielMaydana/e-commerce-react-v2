@@ -71,6 +71,10 @@
         column-gap: 5em;
     }
 
+    .home-filter-byname {
+        padding-top: 8em;
+    }
+
     .aside-Container {
         visibility: visible;
         width: 100%;
