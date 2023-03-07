@@ -47,7 +47,7 @@ const FilterProductsOrCatPrice = ({ products, setFilteredProduct, setProductPric
     <aside className="container-filters">
       <article className="container-filter-price">
         <div className="price-btn-list">
-          <p>Price</p>
+          <p>Precio</p>
           <i
             ref={rotateRow1}
             onClick={mostrarFilterPrice}

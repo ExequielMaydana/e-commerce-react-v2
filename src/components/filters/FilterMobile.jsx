@@ -52,7 +52,7 @@ const FilterMobile = ({products, setFilteredProduct}) => {
           <article className="filter-mobile-price">
 
             <div className="container-btn-openFilter-mobile">
-              <p>Price</p>
+              <p>Precio</p>
               <i
                 ref={rotateRow1}
                 onClick={mostrarFilterPrice}
